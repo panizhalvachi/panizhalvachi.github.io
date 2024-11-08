@@ -221,6 +221,7 @@ $(document).ready(function(){
 		// if (window.matchMedia('(prefers-color-scheme: light)').matches)
 		// 	localStorage.theme = "light";
 	}
+	localStorage.theme = "dark";
 
 	// Always load the dark theme
 	$('<link>').appendTo('head').attr({

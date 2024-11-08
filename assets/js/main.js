@@ -241,19 +241,19 @@ $(document).ready(function(){
 	// 	$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
 	// }
 
-	// Controls the option menu toggler to show/hide the language and theme selectors
-	$('#options-toggler').click(function(e) {
-		if(!$(e.currentTarget).hasClass('active')) {
-			$(e.currentTarget).addClass('active');
-			$('#theme').show("fast");
-			$('#lan').show("fast");
-		}
-		else {
-			$(e.currentTarget).removeClass('active');
-			$('#theme').hide("fast");
-			$('#lan').hide("fast");
-		}
-	})
+	// // Controls the option menu toggler to show/hide the language and theme selectors
+	// $('#options-toggler').click(function(e) {
+	// 	if(!$(e.currentTarget).hasClass('active')) {
+	// 		$(e.currentTarget).addClass('active');
+	// 		$('#theme').show("fast");
+	// 		$('#lan').show("fast");
+	// 	}
+	// 	else {
+	// 		$(e.currentTarget).removeClass('active');
+	// 		$('#theme').hide("fast");
+	// 		$('#lan').hide("fast");
+	// 	}
+	// })
 
 	// Alternates between light and dark themes
 	// $('#theme').click(function(e) {
@@ -284,15 +284,15 @@ $(document).ready(function(){
 	// })
 
 	
-	// Create the language manager
-	const langManager = new LanguageManager();
+	// // Create the language manager
+	// const langManager = new LanguageManager();
 	
-	// Alternates between the different available languages
-	$('#lan').click(function() {
-        const newLang = langManager.getNextLanguage();
-        langManager.setLanguage(newLang);
-    });
-});
+	// // Alternates between the different available languages
+	// $('#lan').click(function() {
+ //        const newLang = langManager.getNextLanguage();
+ //        langManager.setLanguage(newLang);
+ //    });
+// });
 
 // Clears the active links
 function clearActiveLinks() {

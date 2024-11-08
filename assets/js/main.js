@@ -217,82 +217,81 @@ $(document).ready(function(){
 	
 	// If the user has not selected a theme, then select the default one according to the user's preferences
 	if(localStorage.getItem("theme") === null){
-		localStorage.theme = "dark";
-		// if (window.matchMedia('(prefers-color-scheme: light)').matches)
-		// 	localStorage.theme = "light";
+		localStorage.theme = "light";
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches)
+			localStorage.theme = "dark";
 	}
-	localStorage.theme = "dark";
 
-	// Always load the dark theme
+	// Always load the light theme
 	$('<link>').appendTo('head').attr({
 		type: 'text/css', 
 		rel: 'stylesheet',
-		href: 'assets/css/dark.css'
+		href: 'assets/css/light.css'
 	});
 
 	// If the user has the dark theme, then replace the light theme with the dark one
-	// if (localStorage.theme == "light") {
-	// 	$("link[href='assets/css/dark.css']").remove();
-	// 	$('<link>').appendTo('head').attr({
-	// 		type: 'text/css', 
-	// 		rel: 'stylesheet',
-	// 		href: 'assets/css/light.css'
-	// 	});
-	// 	$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
-	// }
+	if (localStorage.theme == "dark") {
+		$("link[href='assets/css/light.css']").remove();
+		$('<link>').appendTo('head').attr({
+			type: 'text/css', 
+			rel: 'stylesheet',
+			href: 'assets/css/dark.css'
+		});
+		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+	}
 
-	// // Controls the option menu toggler to show/hide the language and theme selectors
-	// $('#options-toggler').click(function(e) {
-	// 	if(!$(e.currentTarget).hasClass('active')) {
-	// 		$(e.currentTarget).addClass('active');
-	// 		$('#theme').show("fast");
-	// 		$('#lan').show("fast");
-	// 	}
-	// 	else {
-	// 		$(e.currentTarget).removeClass('active');
-	// 		$('#theme').hide("fast");
-	// 		$('#lan').hide("fast");
-	// 	}
-	// })
+	// Controls the option menu toggler to show/hide the language and theme selectors
+	$('#options-toggler').click(function(e) {
+		if(!$(e.currentTarget).hasClass('active')) {
+			$(e.currentTarget).addClass('active');
+			$('#theme').show("fast");
+			$('#lan').show("fast");
+		}
+		else {
+			$(e.currentTarget).removeClass('active');
+			$('#theme').hide("fast");
+			$('#lan').hide("fast");
+		}
+	})
 
 	// Alternates between light and dark themes
-	// $('#theme').click(function(e) {
-	// 	if(localStorage.theme != "light"){
-	// 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+	$('#theme').click(function(e) {
+		if(localStorage.theme != "dark"){
+			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
 
-	// 		localStorage.theme = "light"
+			localStorage.theme = "dark"
 			
-	// 		$("link[href='assets/css/dark.css']").remove();
-	// 		$('<link>').appendTo('head').attr({
-	// 			type: 'text/css', 
-	// 			rel: 'stylesheet',
-	// 			href: 'assets/css/light.css'
-	// 		});
-	// 	}
-	// 	else {
-	// 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
+			$("link[href='assets/css/light.css']").remove();
+			$('<link>').appendTo('head').attr({
+				type: 'text/css', 
+				rel: 'stylesheet',
+				href: 'assets/css/dark.css'
+			});
+		}
+		else {
+			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
 
-	// 		localStorage.theme = "dark"
+			localStorage.theme = "light"
 			
-	// 		$("link[href='assets/css/light.css']").remove();
-	// 		$('<link>').appendTo('head').attr({
-	// 			type: 'text/css', 
-	// 			rel: 'stylesheet',
-	// 			href: 'assets/css/dark.css'
-	// 		});
-	// 	}
-	// })
+			$("link[href='assets/css/dark.css']").remove();
+			$('<link>').appendTo('head').attr({
+				type: 'text/css', 
+				rel: 'stylesheet',
+				href: 'assets/css/light.css'
+			});
+		}
+	})
 
 	
-	// // Create the language manager
-	// const langManager = new LanguageManager();
+	// Create the language manager
+	const langManager = new LanguageManager();
 	
-	// // Alternates between the different available languages
-	// $('#lan').click(function() {
- //        const newLang = langManager.getNextLanguage();
- //        langManager.setLanguage(newLang);
- //    });
-// });
+	// Alternates between the different available languages
+	$('#lan').click(function() {
+        const newLang = langManager.getNextLanguage();
+        langManager.setLanguage(newLang);
+    });
+});
 
 // Clears the active links
 function clearActiveLinks() {

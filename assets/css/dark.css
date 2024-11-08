@@ -12,7 +12,7 @@ body {
 	color: var(--t-color)
 }
 
-h1, h2, h3, h4, b {
+h1, h2, h3, b {
 	color: var(--h-color) !important;
 }
 

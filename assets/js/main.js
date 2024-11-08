@@ -222,11 +222,11 @@ $(document).ready(function(){
 			localStorage.theme = "light";
 	}
 
-	// Always load the light theme
+	// Always load the dark theme
 	$('<link>').appendTo('head').attr({
 		type: 'text/css', 
 		rel: 'stylesheet',
-		href: 'assets/css/light.css'
+		href: 'assets/css/dark.css'
 	});
 
 	// If the user has the dark theme, then replace the light theme with the dark one

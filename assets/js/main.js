@@ -230,12 +230,12 @@ $(document).ready(function(){
 	});
 
 	// If the user has the dark theme, then replace the light theme with the dark one
-	if (localStorage.theme == "dark") {
-		$("link[href='assets/css/light.css']").remove();
+	if (localStorage.theme == "light") {
+		$("link[href='assets/css/dark.css']").remove();
 		$('<link>').appendTo('head').attr({
 			type: 'text/css', 
 			rel: 'stylesheet',
-			href: 'assets/css/dark.css'
+			href: 'assets/css/light.css'
 		});
 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
 	}
@@ -256,20 +256,8 @@ $(document).ready(function(){
 
 	// Alternates between light and dark themes
 	$('#theme').click(function(e) {
-		if(localStorage.theme != "dark"){
+		if(localStorage.theme != "light"){
 			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
-
-			localStorage.theme = "dark"
-			
-			$("link[href='assets/css/light.css']").remove();
-			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
-				rel: 'stylesheet',
-				href: 'assets/css/dark.css'
-			});
-		}
-		else {
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
 
 			localStorage.theme = "light"
 			
@@ -278,6 +266,18 @@ $(document).ready(function(){
 				type: 'text/css', 
 				rel: 'stylesheet',
 				href: 'assets/css/light.css'
+			});
+		}
+		else {
+			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
+
+			localStorage.theme = "dark"
+			
+			$("link[href='assets/css/light.css']").remove();
+			$('<link>').appendTo('head').attr({
+				type: 'text/css', 
+				rel: 'stylesheet',
+				href: 'assets/css/dark.css'
 			});
 		}
 	})

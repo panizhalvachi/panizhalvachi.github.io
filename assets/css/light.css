@@ -11,11 +11,11 @@ body {
 	color: var(--t-color);
 }
 
-h1, h2, b {
+h1, b {
 	color: var(--t-color) !important;
 }
 
-h3, h4 {
+h2, h3, h4 {
 	color: var(--h-color)!important;
 }
 

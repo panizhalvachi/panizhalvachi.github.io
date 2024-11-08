@@ -4,6 +4,7 @@
 
 	--bg-color: #383838;
 	--nv-color: #121212;
+	--hh-color: #228B22
 }
 
 body {
@@ -13,6 +14,10 @@ body {
 
 h1, h2, h3, h4, b {
 	color: var(--h-color) !important;
+}
+
+h4 {
+	color: var(--hh-color) !important;
 }
 
 #top-nav {

@@ -230,15 +230,15 @@ $(document).ready(function(){
 	});
 
 	// If the user has the dark theme, then replace the light theme with the dark one
-	if (localStorage.theme == "light") {
-		$("link[href='assets/css/dark.css']").remove();
-		$('<link>').appendTo('head').attr({
-			type: 'text/css', 
-			rel: 'stylesheet',
-			href: 'assets/css/light.css'
-		});
-		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
-	}
+	// if (localStorage.theme == "light") {
+	// 	$("link[href='assets/css/dark.css']").remove();
+	// 	$('<link>').appendTo('head').attr({
+	// 		type: 'text/css', 
+	// 		rel: 'stylesheet',
+	// 		href: 'assets/css/light.css'
+	// 	});
+	// 	$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+	// }
 
 	// Controls the option menu toggler to show/hide the language and theme selectors
 	$('#options-toggler').click(function(e) {
@@ -255,32 +255,32 @@ $(document).ready(function(){
 	})
 
 	// Alternates between light and dark themes
-	$('#theme').click(function(e) {
-		if(localStorage.theme != "light"){
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
+	// $('#theme').click(function(e) {
+	// 	if(localStorage.theme != "light"){
+	// 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb-slash'></i>");
 
-			localStorage.theme = "light"
+	// 		localStorage.theme = "light"
 			
-			$("link[href='assets/css/dark.css']").remove();
-			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
-				rel: 'stylesheet',
-				href: 'assets/css/light.css'
-			});
-		}
-		else {
-			$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
+	// 		$("link[href='assets/css/dark.css']").remove();
+	// 		$('<link>').appendTo('head').attr({
+	// 			type: 'text/css', 
+	// 			rel: 'stylesheet',
+	// 			href: 'assets/css/light.css'
+	// 		});
+	// 	}
+	// 	else {
+	// 		$('#theme').empty().append("<i class='fa-duotone fa-lightbulb'></i>");
 
-			localStorage.theme = "dark"
+	// 		localStorage.theme = "dark"
 			
-			$("link[href='assets/css/light.css']").remove();
-			$('<link>').appendTo('head').attr({
-				type: 'text/css', 
-				rel: 'stylesheet',
-				href: 'assets/css/dark.css'
-			});
-		}
-	})
+	// 		$("link[href='assets/css/light.css']").remove();
+	// 		$('<link>').appendTo('head').attr({
+	// 			type: 'text/css', 
+	// 			rel: 'stylesheet',
+	// 			href: 'assets/css/dark.css'
+	// 		});
+	// 	}
+	// })
 
 	
 	// Create the language manager

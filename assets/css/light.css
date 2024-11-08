@@ -2,6 +2,8 @@
 	--t-color: #000;
 
 	--bg-color: #fff;
+
+	--h-color: #228B22
 }
 
 body {
@@ -9,8 +11,12 @@ body {
 	color: var(--t-color);
 }
 
-h1, h2, h3, h4, b {
+h1, h2, h3, b {
 	color: var(--t-color) !important;
+}
+
+h4 {
+	color: var(--h-color)!important;
 }
 
 #top-nav {
